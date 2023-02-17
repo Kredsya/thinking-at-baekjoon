@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+using namespace std;int r(vector<pair<int,int>>v,int t){for(auto p:v)if(t==p.first)return p.second;return 0;}int main(){int n,m,S,F,i,f,t,j;cin>>n>>m;vector<pair<int,int>>l,s;for(i=0;i<n;i++){cin>>S>>F;l.push_back({S,F});}for(i=0;i<m;i++){cin>>S>>F;s.push_back({S,F});}vector<int>d(101,100);d[1]=0;for(i=2;i<101;i++)for(j=1;0<i-j&&j<=6;j++){f=i-j;t=i;if(r(s,f)||r(l,f))continue;d[t]=min(d[t],d[f]+1);F=r(s,t);if(F)if(d[F]>d[t]){d[F]=d[t];i=F;break;}F=r(l,t);if(F)d[F]=min(d[F],d[t]);}cout<<d[100];}
