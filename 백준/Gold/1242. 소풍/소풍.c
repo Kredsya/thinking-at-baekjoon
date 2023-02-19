@@ -1,0 +1,1 @@
+a;main(n,k,m,t){scanf("%d%d%d",&n,&k,&m);while(++a){t=(k-1)%n+1;if(m==t){printf("%d",a);break;}m+=(m<=t?n-t:-t);n--;}}
