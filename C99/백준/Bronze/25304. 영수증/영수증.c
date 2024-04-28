@@ -1,0 +1,1 @@
+main(x,n,a,b){scanf("%d%d",&x,&n);for(;n--;x-=a*b)scanf("%d%d",&a,&b);puts(x?"No":"Yes");}
