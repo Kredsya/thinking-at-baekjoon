@@ -1,1 +1,1 @@
-main(x,a,b){for(scanf("%d%d",&x,&a);~scanf("%d%d",&a,&b);x-=a*b);puts(x?"No":"Yes");}
+main(x,a,b){for(scanf("%d%d",&x);~scanf("%d%d",&a,&b);x-=a*b);puts(x?"No":"Yes");}
