@@ -70,24 +70,17 @@ int main() {
         vector<ll> tree(s * 2);
         init(v, tree, 1, 0, n-1);
         
-        bool exitflag = false;
+        bool isYes = true;
         for(auto it = index.begin(); it != index.end(); it++) {
             int last = it->second[0];
-            for(int i=1; i<it->second.size(); i++) {
-                if(query(tree, 1, 0, n-1, last, it->second[i]) > it->first) {
-                    exitflag = true;
-                    break;
-                }
+            if(query(tree, 1, 0, n-1, last, it->second.back()) > it->first) {
+                isYes = false;
+                break;
             }
-            if(exitflag) break;
         }
         
-        if(exitflag) {
-            cout << "No\n";
-        }
-        else {
-            cout << "Yes\n";
-        }
+        if(isYes) cout << "Yes\n";
+        else cout << "No\n";
     }
     
     return 0;
